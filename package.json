@@ -1,0 +1,14 @@
+{
+  "name": "google-helpers",
+  "version": "1.0.0",
+  "description": "Helpers and demo for accessing Google APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/test-google-apis.cjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "google-auth-library": "^9.15.0",
+    "googleapis": "^144.0.0"
+  }
+}
