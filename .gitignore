@@ -116,3 +116,4 @@ google-cloud-sdk/
 deploy_private_key
 gcloud
 ssh_keys
+client_secret*
