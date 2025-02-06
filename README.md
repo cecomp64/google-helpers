@@ -131,3 +131,10 @@ It's the response from the auth URL above
 # Domain-Wide Delegation
 
 Need a Google Workspace admin to enable for project linked to service account
+
+# Summary of Requirements for Accessing Google Groups
+  * Domain-wide delegation (by admin of workspace)
+    * issue the proper OAuth scopes
+  * Create OAuth Client ID
+    * Web client with redirect_uris matching the callbacks that handle granting permissions
+  * Grant the impersonated user Group Admin role
