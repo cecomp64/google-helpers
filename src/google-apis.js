@@ -1,5 +1,4 @@
 const {GoogleAuth} = require('google-auth-library');
-const {OAuth2} = require('google-auth-library');
 const { google } = require('googleapis');
 const {scopes} = require('./shared-variables');
 
