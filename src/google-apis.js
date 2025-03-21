@@ -73,11 +73,22 @@ async function write_spreadsheet(client, sheetId, range, values) {
 
 async function lookup_group_members(client, group) {
   const service = google.admin({ version: 'directory_v1', auth: client });
-  console.log('Listing members...')
-  const res = await service.members.list({groupKey: group});
-  console.dir(res);
+  var members = []
 
-  return res;
+  console.log(`Listing members... for group ${group}`)
+  var params = {
+    groupKey: group,
+    maxResults: 100,
+  }
+  do {
+    var res = await service.members.list(params);
+    //console.dir(res);
+    //console.log(`nextPageToken: ${res.data.nextPageToken}`)
+    members = members.concat(res.data.members)
+    params.pageToken = res.data.nextPageToken
+  } while(params.pageToken)
+
+  return members;
 }
 
 //  member should be an array of e-mail addresses or ids

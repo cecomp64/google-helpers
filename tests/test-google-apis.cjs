@@ -9,9 +9,10 @@ async function test() {
   });
 
   console.dir(client);
-  var result = await GAPI.lookup_group_members(client, process.env.GOOGLE_MEMBERSHIP_GROUP)
+  var members = await GAPI.lookup_group_members(client, process.env.GOOGLE_MEMBERSHIP_GROUP)
 
-  console.dir(result.data)
+  console.dir(members)
+  console.log(`members size: ${members.length}`)
 }
 
 test();
